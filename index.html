@@ -131,7 +131,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
   $( window ).on( "load", function() {
   })     
   function key(){
-    var keys=mitz.crypto.generateKeys()
+   var mn= await mitz.crypto.generateMnemonic()
+    var keys= await mitz.crypto.generateKeys(mn)
     // alert("addreses: \n"+keys.pkh + "\n SecretKey \n"+ keys.sk)
     document.getElementById("pkh").innerHTML = " " +keys.pkh ;
     document.getElementById("sk").innerHTML = " " + keys.sk  ;
